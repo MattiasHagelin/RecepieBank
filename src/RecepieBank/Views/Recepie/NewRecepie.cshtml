@@ -1,0 +1,18 @@
+﻿@model RecepieVM
+
+<form asp-controller="Recepie" asp-action="AddRecepie">
+    <input type="hidden" value="@Model.Id" />
+    <label asp-for="Name"></label>
+    <input asp-for="Name" />
+    <label asp-for="Ingredients"></label>
+    <a asp-controller="ingredient" asp-action="addIngredient" asp-route-recepie="@Model.Ingredients">Add</a>
+    <ul>
+        @foreach (var item in Model.Ingredients)
+        {
+            <li>
+                @item.Quantity @item.Unit
+            </li>
+        }
+    </ul>
+    <input type="submit" value="Save" />
+</form>

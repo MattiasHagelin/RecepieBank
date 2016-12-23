@@ -1,0 +1,10 @@
+﻿@model RecepieVM[]
+<a asp-controller="Recepie" asp-action="NewRecepie">New recepie</a>
+<ul>
+    @foreach (var recepie in Model)
+    {
+        <li>
+            <a href="recepie/@recepie.Id">@recepie.Name</a>
+        </li>
+    }
+</ul>

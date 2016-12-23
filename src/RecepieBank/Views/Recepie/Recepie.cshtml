@@ -1,0 +1,18 @@
+﻿@model RecepieVM
+@{ 
+    ViewBag.Title = Model.Name;
+}
+
+<ul>
+    @foreach (var item in Model.Ingredients)
+    {
+        <li>@item.Quantity @item.Unit @item.Ingredinet.Name</li>
+    }
+</ul>
+
+<ol>
+    @foreach (var item in Model.Description)
+    {
+        <li>@item</li>
+    }
+</ol>

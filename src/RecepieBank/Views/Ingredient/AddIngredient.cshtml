@@ -1,0 +1,7 @@
+﻿@model List<IngredientInRecepieVM>
+<form asp-controller="ingredient" asp-action="AddIngredient">
+    <input asp-for="@Model.Last().Quantity" />
+    <select asp-for="@Model.Last().IngredinetId" asp-items="@(new SelectList(Model.Last().Ingredients, "IngredientId","Name"))">
+    </select>
+    <input type="submit" value="Add to recepie" />
+</form>
