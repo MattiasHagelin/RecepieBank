@@ -9,9 +9,9 @@ namespace RecepieBank.ViewModels
     public class IngredientInRecepieVM
     {
         public int IngredinetId { get; set; }
+        public string IngredientName { get; set; }
         public Units Unit { get; set; }
         public float? Quantity { get; set; }
         public int RecepieId { get; set; }
-        public ICollection<IngredientVM> Ingredients { get; set; }
     }
 }

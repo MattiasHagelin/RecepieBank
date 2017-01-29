@@ -64,7 +64,10 @@ namespace RecepieBank.Repositories
             Recepies.Add(new Recepie
             {
                 Id = IdGenerator(Recepies),
-                Name = "TestRecepie2"
+                Name = "TestRecepie2",
+                EstimatedTime = "",
+                OvenTemperature = null,
+                Description = ""
             });
             #endregion
 
@@ -122,11 +125,22 @@ namespace RecepieBank.Repositories
             #endregion
 
             Recepies.Single(r => r.Id == 0).Ingredients = IngredientsInRecepies.Where(i => i.RecepieId == 0).ToList();
+            Recepies.Single(r => r.Id == 1).Ingredients = new List<IngredientInRecepie>();
         }
 
         public static int IdGenerator<T>(List<T> list)
         {
             return list.Count;
+        }
+
+        public static string ListToCSV<T>(ICollection<T> values)
+        {
+            var csv = string.Empty;
+            foreach (var value in values)
+            {
+                csv += value + ";";
+            }
+            return csv.Remove(csv.Length - 1);
         }
     }
 }

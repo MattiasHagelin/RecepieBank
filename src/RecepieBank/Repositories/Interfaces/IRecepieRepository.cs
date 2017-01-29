@@ -11,5 +11,7 @@ namespace RecepieBank.Repositories.Interfaces
         RecepieVM[] Recepies();
         RecepieVM RecepieById(int id);
         RecepieVM NewRecepie();
+        void DeleteRecepieById(int id);
+        void EditRecepie(RecepieVM recepie);
     }
 }

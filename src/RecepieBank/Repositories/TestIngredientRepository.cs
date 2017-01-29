@@ -27,17 +27,18 @@ namespace RecepieBank.Repositories
 
         public RecepieVM NewIngredientInRecepie(RecepieVM recepie)
         {
-            var ingredient = new IngredientInRecepieVM
-            {
-                Ingredients = Context.Ingredients.Select(i => new IngredientVM
-                {
-                    IngredientId = i.Id,
-                    Name = i.Name
-                })
-                .ToList()
-            };
-            recepie.Ingredients.Add(ingredient);
-            return recepie;
+            //    var ingredient = new ingredientinrecepievm
+            //    {
+            //        ingredients = context.ingredients.select(i => new ingredientvm
+            //        {
+            //            ingredientid = i.id,
+            //            name = i.name
+            //        })
+            //        .tolist()
+            //    };
+            //    recepie.ingredients.add(ingredient);
+            //    return recepie;
+                return null;
         }
     }
 }

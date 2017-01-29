@@ -3,10 +3,12 @@
     ViewBag.Title = Model.Name;
 }
 
+<a asp-controller="Recepie" asp-action="DeleteRecepie" asp-route-id="@Model.Id">Delete</a>
+
 <ul>
     @foreach (var item in Model.Ingredients)
     {
-        <li>@item.Quantity @item.Unit @item.Ingredinet.Name</li>
+        <li>@item.Quantity @item.Unit @item.IngredientName</li>
     }
 </ul>
 

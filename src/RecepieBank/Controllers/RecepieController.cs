@@ -43,5 +43,11 @@ namespace RecepieBank.Controllers
             var model = recepieRepository.RecepieById(id);
             return View(model);
         }
+
+        public IActionResult DeleteRecepie(int id)
+        {
+            recepieRepository.DeleteRecepieById(id);
+            return RedirectToAction(nameof(RecepieController.Recepies));
+        }
     }
 }
